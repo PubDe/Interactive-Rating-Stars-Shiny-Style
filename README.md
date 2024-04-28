@@ -19,7 +19,7 @@ Install this package into your R libraries via console.
 - Contributions are welcome! If you find any issues, have suggestions, or want to add features, please open an issue or create a pull request.
 
 ## License
-[MIT](https://choosealicense.com/licenses/mit/)
+- [MIT](https://choosealicense.com/licenses/mit/) License
 
 ## Acknowladgement
 
