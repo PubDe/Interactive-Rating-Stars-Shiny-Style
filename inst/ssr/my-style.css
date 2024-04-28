@@ -1,0 +1,288 @@
+@charset "UTF-8";
+
+.rastr {
+  --starsize: 16.7%;
+
+  position: relative;
+  display: block;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+/*   -webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="48"><rect x="8.5%" y="6" height="50px" width="83%" fill="white"></rect></svg>');
+  mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="48"><rect x="8.5%" y="6" height="50px" width="83%" fill="white"></rect></svg>');
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat; */
+  
+  --star: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 17.25l-6.188 3.75 1.641-7.031-5.438-4.734 7.172-0.609 2.813-6.609 2.813 6.609 7.172 0.609-5.438 4.734 1.641 7.031z"/></svg>');
+  -webkit-mask: repeat-x -10% center/var(--starsize) var(--star);
+  mask: repeat-x -10% center/var(--starsize) var(--star); 
+  clip-path: circle(57% at center);
+
+}
+
+.rastr *,
+.rastr *:before,
+.rastr *:after {
+  box-sizing: inherit;
+}
+
+.rastr-line {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  outline: none !important;
+}
+
+.rastr-bar {
+  position: absolute;
+  display: block;
+  left: 0;
+  width: 0;
+}
+
+.rastr-shadow {
+  position: absolute;
+  display: none;
+  left: 0;
+  width: 0;
+}
+
+.rastr-handle {
+  position: absolute;
+  display: block;
+  box-sizing: border-box;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.rastr-handle.type_last {
+  z-index: 2;
+}
+
+/* .rastr-min, .rastr-max {
+  position: absolute;
+  display: block;
+  cursor: default;
+}
+
+.rastr-min {
+  left: 0;
+}
+
+.rastr-max {
+  right: 0;
+} */
+
+.rastr-from,
+.rastr-to,
+.rastr-single {
+  position: absolute;
+  display: block;
+  top: 1;
+  left: 0;
+  cursor: default;
+  white-space: nowrap;
+}
+
+.rastr-grid {
+  position: absolute;
+  display: none;
+  bottom: 0 !important;
+  left: 0 !important;
+  width: 0% !important;
+  height: 0px !important;
+}
+
+/* .rastr-with-grid .rastr-grid {
+  display: block;
+} */
+
+.rastr-grid-pol {
+  position: absolute;
+  top: 0 !important;
+  left: 0 !important;
+  width: 0px !important;
+  height: 0px !important;
+}
+
+.rastr-grid-pol.small {
+  height: 0px;
+}
+
+.rastr-grid-text {
+  position: absolute;
+  bottom: 0 !important;
+  left: 0 !important;
+  white-space: nowrap !important;
+  text-align: center !important;
+  font-size: 0px !important;
+  line-height: 0px !important;
+  padding: 0 0px !important;
+}
+
+.rastr-disable-mask {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: -1%;
+  width: 102%;
+  height: 100%;
+  cursor: default;
+  background: rgba(0, 0, 0, 0);
+  z-index: 2;
+}
+
+.lt-ie9 .rastr-disable-mask {
+  background: #000;
+  filter: alpha(opacity=0);
+  cursor: not-allowed;
+}
+
+.rastr-disabled {
+  opacity: 0.4;
+}
+
+.rastr-hidden-input {
+  position: absolute !important;
+  display: block !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  font-size: 0 !important;
+  line-height: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  overflow: hidden;
+  outline: none !important;
+  z-index: -9999 !important;
+  background: none !important;
+  border-style: solid !important;
+  border-color: transparent !important;
+}
+
+.rastr {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.rastr--shiny {
+  height: 40px;
+}
+
+.rastr--shiny.rastr-with-grid {
+  height: 10%;
+}
+
+.rastr--shiny .rastr-line {
+  top: 3px;
+  height: 50px;
+  background: linear-gradient(to bottom, #fff -50%, #746c6c73 150%);
+  background-color: #ededed;
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+/*    --star: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 17.25l-6.188 3.75 1.641-7.031-5.438-4.734 7.172-0.609 2.813-6.609 2.813 6.609 7.172 0.609-5.438 4.734 1.641 7.031z"/></svg>');
+
+  -webkit-mask: repeat-x -10% center/var(--starsize) var(--star);
+  mask: repeat-x -10% center/var(--starsize) var(--star);  */
+}
+
+.rastr--shiny .rastr-bar {
+  top: 5px;
+  height: 50px;
+  border-top: 1px solid #fd8c00;
+  border-bottom: 1px solid #883200;
+  background: linear-gradient(to bottom, #fdff5d -1%, #ff7905 200%);
+/*   --star: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 17.25l-6.188 3.75 1.641-7.031-5.438-4.734 7.172-0.609 2.813-6.609 2.813 6.609 7.172 0.609-5.438 4.734 1.641 7.031z"/></svg>');
+  --starsize: 5rem;
+
+  -webkit-mask: repeat -25px center/var(--starsize) var(--star);
+  mask: repeat -25px center/var(--starsize) var(--star); */
+
+}
+
+.rastr--shiny .rastr-bar--single {
+  border-radius: 0px 0 0 0px;
+}
+
+.rastr--shiny .rastr-shadow {
+  top: 38px;
+  height: 2px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+}
+
+.rastr--shiny .lt-ie9 .rastr-shadow {
+  filter: alpha(opacity=30);
+}
+
+.rastr--shiny .rastr-handle {
+  top: 5px;
+
+  width: 16%;
+  height: 50px;
+  border: 1px solid rgba(247, 218, 76, 0);
+  background-color: rgba(232, 217, 37, 0);
+  box-shadow: 1px 1px 3px rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+
+}
+
+.rastr--shiny .rastr-handle.state_hover,
+.rastr--shiny .rastr-handle:hover {
+  background: rgba(247, 255, 121, 0.28);
+
+}
+
+.rastr--shiny .rastr-min,
+.rastr--shiny .rastr-max {
+  top: 0;
+  padding: 1px 3px;
+  text-shadow: none;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+  font-size: 10px;
+  line-height: 1.333;
+}
+
+.rastr--shiny .lt-ie9 .rastr-min,
+.rastr--shiny .lt-ie9 .rastr-max {
+  background: #cccccc;
+}
+
+.rastr--shiny .rastr-from,
+.rastr--shiny .rastr-to,
+.rastr--shiny .rastr-single {
+  color: #fff;
+  text-shadow: none;
+  padding: 0px 0px;
+  background-color: #428bca;
+  border-radius: 0px;
+  font-size: 0px;
+  line-height: 1.333;
+}
+
+.rastr--shiny .lt-ie9 .rastr-from,
+.rastr--shiny .lt-ie9 .rastr-to,
+.rastr--shiny .lt-ie9 .rastr-single {
+  background: #999999;
+}
+
+.rastr--shiny .rastr-grid {
+  height: 27px;
+}
+
+.rastr--shiny .rastr-grid-pol {
+  background-color: #000;
+}
+
+.rastr--shiny .rastr-grid-text {
+  bottom: 5px;
+}
+
+.rastr--shiny .rastr-grid-pol.small {
+  background-color: #999999;
+}

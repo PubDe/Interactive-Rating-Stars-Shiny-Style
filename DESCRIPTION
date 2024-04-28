@@ -1,0 +1,15 @@
+Package: ratingStars
+Type: Package
+Title: Star Rating widget for R Shiny Apps
+Version: 0.1.0
+Author: PubDe
+Maintainer: Pubudu_Dehigolla <pubududehigolla@gmail.com>
+Description: This widget provides a modern and visually appealing CSS style for 
+   creating interactive star rating components. The design is particularly 
+   well-suited for web applications with a shiny and dynamic user interface.
+License: MIT License
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.2.3
+Imports:
+  htmltools
